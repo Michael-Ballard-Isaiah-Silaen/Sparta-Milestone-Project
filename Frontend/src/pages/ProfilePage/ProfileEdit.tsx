@@ -185,24 +185,30 @@ const ProfilePageEdit = () => {
           </div>
 
           <div className="flex w-full flex-col items-start space-y-2">
-            <p className="text-lg font-bold tracking-wider">
-              Theme
-            </p>
+            <p className="text-lg font-bold tracking-wider">Theme</p>
 
             <div className="flex flex-row w-full items-center">
-              <label htmlFor="displayName" className="text-lg font-normal w-2/5">
-              Current Theme
+              <label htmlFor="themeSelect" className="text-lg font-normal w-2/5">
+                Current Theme
               </label>
-          
-              <select
-                className="w-3/4 bg-white rounded-md border-2 border-[#0C173D] p-2">
-                <option value="light">Light Theme</option>
-                <option value="dark">Dark Theme</option>
-                <option value="system">System Default</option>
+              
+              <div className="flex w-3/4">
+                <select
+                  id="themeSelect"
+                  className="w-full bg-white rounded-md border-2 border-[#0C173D] p-2"
+                >
+                  <option value="light">Light Theme</option>
+                  <option value="dark">Dark Theme</option>
+                  <option value="system">System Default</option>
                 </select>
 
+                <button className="ml-2 h-11 bg-white rounded-md px-4 py-2" type="button"onClick={(e) => e.preventDefault()} >
+                  <img src="/public/mdi_cart-outline.svg" alt="refresh" width={30} height={30}/>
+                </button>
+              </div>
             </div>
           </div>
+
 
           <Button className="bg-[#0C173D]">Save Edit</Button>
           <NavLink

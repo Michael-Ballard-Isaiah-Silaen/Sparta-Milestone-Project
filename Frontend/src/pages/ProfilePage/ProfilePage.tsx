@@ -37,7 +37,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <main className="relative w-full grow pb-20 pt-24">
+    <main className="relative w-full grow pb-20 pt-24 bg-gradient-to-b from-[#F5F5F5] to-[#7FA1C3]">
       <div className="flex h-fit min-h-full w-full flex-col items-center justify-center gap-8">
         <Breadcrumb className="max-w-[1000px] px-4" />
         <div className="aspect-square h-auto w-64 overflow-hidden rounded-full border-2 bg-gray-50">
