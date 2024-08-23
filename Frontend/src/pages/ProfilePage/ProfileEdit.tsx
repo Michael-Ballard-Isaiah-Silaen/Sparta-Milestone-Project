@@ -8,6 +8,7 @@ import CustomAxios from "../../lib/actions/CustomAxios";
 import { handleFetchError } from "../../lib/actions/HandleError";
 import InputImage from "../../components/universal/InputImage";
 
+
 const ProfilePageEdit = () => {
   const { username } = useParams();
   const navigate = useNavigate();
@@ -77,19 +78,19 @@ const ProfilePageEdit = () => {
   };
 
   return (
-    <main className="relative flex min-h-screen w-full items-center justify-center py-6">
+    <main className="relative flex min-h-screen w-full items-center justify-center">
       <div className="flex h-fit min-h-full w-full flex-col items-center justify-center gap-8">
         <form
           action="post"
           onSubmit={onSubmit}
-          className="mx-auto flex h-fit w-full max-w-[700px] flex-col gap-4 rounded-lg border-[1px] py-10 shadow-lg md:px-8"
+          className="mx-auto flex h-fit w-full flex-col gap-4 rounded-lg border-[1px] p-10 shadow px-8 lg:px-40 bg-gradient-to-b from-[#F5F5F5] to-[#7FA1C3]"
         >
           <h1 className="text-center text-2xl font-bold">
             Hello {userProfile?.displayName}
           </h1>
           <h2 className="text-center">Update your account here</h2>
           <div className="flex w-full flex-col items-start">
-            <p className="text-sm font-light uppercase tracking-wider">
+            <p className="text-xl font-bold tracking-wider">
               Public Picture
             </p>
             <InputImage
@@ -100,21 +101,113 @@ const ProfilePageEdit = () => {
             />
           </div>
 
-          <div className="flex w-full flex-col items-start">
-            <p className="text-sm font-light uppercase tracking-wider">
-              Public username
+          <div className="flex w-full flex-col items-start py-4 space-y-2">
+            <p className="text-xl font-bold tracking-wider">
+              Personal Details
             </p>
-            <InputText
-              value={formData.displayName as string}
-              onChange={onChange}
-              name="displayName"
-              placeholder="Input your new public username"
-            />
+
+            <div className="flex flex-row w-full items-center">
+              <label htmlFor="displayName" className="text-lg font-normal w-2/5">
+              First Name
+              </label>
+              <InputText className="w-3/4"
+                value={formData.displayName as string}
+                onChange={onChange}
+                name="displayName"
+                placeholder="Insert your new public username"
+              />
+            </div>
+
+            <div className="flex flex-row w-full items-center">
+              <label htmlFor="displayName" className="text-lg font-normal w-2/5">
+              Last Name
+              </label>
+              <InputText className="w-3/4"
+                value={""}
+                onChange={onChange}
+                name="displayName"
+                placeholder="Insert your last name"
+              />
+            </div>
+            
+            <div className="flex flex-row w-full items-center">
+              <label htmlFor="displayName" className="text-lg font-normal w-2/5">
+              Jurusan
+              </label>
+              <InputText className="w-3/4"
+                value={""}
+                onChange={onChange}
+                name="displayName"
+                placeholder="Insert your major"
+              />
+            </div>
+            
+            <div className="flex flex-row w-full items-center">
+              <label htmlFor="displayName" className="text-lg font-normal w-2/5">
+              Angkatan
+              </label>
+              <InputText className="w-3/4"
+                value={""}
+                onChange={onChange}
+                name="displayName"
+                placeholder="Insert your year of entry"
+              />
+            </div> 
           </div>
-          <Button>Edit</Button>
+
+          <div className="flex w-full flex-col items-start space-y-2">
+            <p className="text-lg font-bold tracking-wider">
+              Change Passwords
+            </p>
+
+            <div className="flex flex-row w-full items-center">
+              <label htmlFor="displayName" className="text-lg font-normal w-2/5">
+              New Password
+              </label>
+              <InputText className="w-3/4"
+                value={""}
+                onChange={onChange}
+                name="displayName"
+                placeholder="Insert your new password"
+              />
+            </div>
+            <div className="flex flex-row w-full items-center">
+              <label htmlFor="displayName" className="text-lg font-normal w-2/5">
+              Password Confirmation
+              </label>
+              <InputText className="w-3/4"
+                value={""}
+                onChange={onChange}
+                name="displayName"
+                placeholder="Insert your new password again"
+              />
+            </div>
+          </div>
+
+          <div className="flex w-full flex-col items-start space-y-2">
+            <p className="text-lg font-bold tracking-wider">
+              Theme
+            </p>
+
+            <div className="flex flex-row w-full items-center">
+              <label htmlFor="displayName" className="text-lg font-normal w-2/5">
+              Current Theme
+              </label>
+          
+              <select
+                className="w-3/4 bg-white rounded-md border-2 border-[#0C173D] p-2">
+                <option value="light">Light Theme</option>
+                <option value="dark">Dark Theme</option>
+                <option value="system">System Default</option>
+                </select>
+
+            </div>
+          </div>
+
+          <Button className="bg-[#0C173D]">Save Edit</Button>
           <NavLink
             to={`/profile/${username}`}
-            className="flex items-center justify-center rounded-md border-2 border-blue-600 bg-white py-2 text-blue-600 hover:bg-blue-100"
+            className="flex items-center justify-center rounded-md border-2 border-[#0C173D] bg-white py-2 text-[#0C173D] hover:bg-blue-100"
           >
             <p>Cancel</p>
           </NavLink>
