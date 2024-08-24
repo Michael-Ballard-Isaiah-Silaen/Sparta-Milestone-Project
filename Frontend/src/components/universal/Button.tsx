@@ -16,7 +16,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       className={twMerge(
-        `rounded-md bg-[#4a6cf7] px-6 py-2 text-white duration-100 ease-in hover:bg-[#4160dd]`,
+        `rounded-md bg-[#4a6cf7] py-2 text-white duration-100 ease-in hover:bg-[#4160dd]`,
         className,
       )}
     >

@@ -42,7 +42,7 @@ const ProfilePage = () => {
         <Breadcrumb className="max-w-[1000px] px-4" />
         <div className="aspect-square h-auto w-64 overflow-hidden rounded-full border-2 bg-gray-50">
           <img
-            src={userProfile?.profilePicUrl}
+            src={"/public/silhouette-male-icon.svg"}
             alt=""
             className="h-full w-full object-cover object-center"
           />

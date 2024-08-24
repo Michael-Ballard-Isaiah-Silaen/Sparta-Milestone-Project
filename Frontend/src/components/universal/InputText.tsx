@@ -7,24 +7,26 @@ const InputText = ({
   onChange,
   value,
   id,
+  type="text"
 }: {
   name: string;
   className?: string;
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  value: string;
+  value: string | number | undefined;
   id?: string;
+  type?: string;
 }) => {
   return (
     <input
-      type="text"
+      type={type}
       autoComplete="new-password"
       name={name}
       id={id || name}
       placeholder={placeholder || name}
-      value={value}
+      value={value !== undefined ? value:""}
       onChange={onChange}
-      className={twMerge("w-full rounded-md border-[1px] p-2", className)}
+      className={twMerge("w-full rounded-md border-[1px] pl-4 pr-2 pt-2 pb-2", className)}
     />
   );
 };

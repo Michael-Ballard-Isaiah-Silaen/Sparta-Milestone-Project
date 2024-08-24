@@ -3,7 +3,7 @@ const Authentication = require("../middlewares/Authentication");
 
 const ProfileRouter = require("express").Router();
 
-ProfileRouter.get("/:username", ProfileController.getByUsername);
+ProfileRouter.get("/:username", ProfileController.getByusername);
 ProfileRouter.put("/:_id", Authentication, ProfileController.updateById);
 
 module.exports = ProfileRouter;
