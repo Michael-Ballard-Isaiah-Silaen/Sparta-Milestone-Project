@@ -1,23 +1,21 @@
-import React, { ReactNode } from "react";
+import React from "react";
+import { twMerge } from "tailwind-merge";
 
-interface ModalProps {
-  isVisible: boolean;
+const Modal = ({
+  isOpen,
+  children,
+  className,
+}: {
+  isOpen: boolean;
   onClose: () => void;
-  children: ReactNode;
-}
-
-const Modal: React.FC<ModalProps> = ({ isVisible, onClose, children }) => {
-  if (!isVisible) return null;
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="relative w-1/3 rounded-lg bg-white p-6 shadow-lg">
-        <button
-          className="absolute right-2 top-2 text-gray-500 hover:text-gray-700"
-          onClick={onClose}
-        >
-          &times;
-        </button>
+    <div className="fixed inset-0 z-[101] flex items-center justify-center bg-black bg-opacity-50">
+      <div className={twMerge("rounded-md bg-white p-6 shadow-lg", className)}>
         {children}
       </div>
     </div>

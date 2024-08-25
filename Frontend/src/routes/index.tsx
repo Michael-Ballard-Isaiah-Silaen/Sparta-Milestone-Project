@@ -1,4 +1,4 @@
-import { Outlet, createBrowserRouter, redirect } from "react-router-dom";
+import { Outlet, createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage/HomePage";
 import Layout from "./Layout";
 import LoginPage from "../pages/LoginPage";
@@ -74,13 +74,11 @@ const router = createBrowserRouter([
         children: [
           {
             path: "profile",
-            loader: () => {
-              return redirect("/");
-            },
+            element: <ProfilePage />,
           },
 
           {
-            path: "profile/:email/edit",
+            path: "profile/edit",
             element: <ProfilePageEdit />,
           },
         ],

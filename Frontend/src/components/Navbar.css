@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+:root {
+  --primary: #eeeeee;
+  --secondary: #227c70;
+  --green: #82cd47;
+  --secondary-light: rgb(34, 124, 112, 0.2);
+  --secondary-light-2: rgb(127, 183, 126, 0.1);
+  --white: #fff;
+  --black: #393e46;
+  --blue: #c3d4ec;
+
+  --shadow: 0px 2px 8px 0px var(--secondary-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--primary);
+}
+
+.navbar {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  height: 70px;
+  background-color: var(--white);
+  padding: 0 8%;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-size: 2em;
+  pointer-events: none;
+  display: flex;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #00061b;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.navbar-list {
+  width: 100%;
+  text-align: center;
+  padding-right: 2rem;
+}
+
+.navbar-list li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: black;
+}
+
+.navbar-list li a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #717171;
+  text-decoration: none;
+}
+
+.profile {
+  position: relative;
+  width: fit-content;
+}
+
+.profile li a {
+  text-decoration: none;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 150px;
+  border-radius: 50px;
+  color: var(--black);
+  /* background-color: white;
+  box-shadow: var(--shadow); */
+  gap: 0.3rem;
+
+  cursor: pointer;
+  border: 2px solid var(--black);
+  transition:
+    box-shadow 0.2s ease-in,
+    background-color 0.2s ease-in,
+    border 0.3s;
+}
+
+.profile-btn.reverse {
+  flex-direction: row-reverse;
+}
+
+.profile-btn:hover {
+  background-color: var(--blue);
+  box-shadow: var(--shadow);
+}
+
+.profile-img {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: url(./profile/profile_user.jpg);
+  background-size: cover;
+  display: flex;
+}
+
+.username {
+  position: relative;
+  display: flex;
+}
