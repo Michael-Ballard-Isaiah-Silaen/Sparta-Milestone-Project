@@ -26,7 +26,7 @@ const InputText = ({
       placeholder={placeholder || name}
       value={value !== undefined ? value:""}
       onChange={onChange}
-      className={twMerge("w-full rounded-md border-[1px] pl-4 pr-2 pt-2 pb-2", className)}
+      className={twMerge("w-full rounded-md border-[1px] pl-2 pr-2 pt-2 pb-2", className)}
     />
   );
 };

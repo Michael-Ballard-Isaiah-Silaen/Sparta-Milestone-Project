@@ -7,6 +7,7 @@ import { handleFetchError } from "../lib/actions/HandleError";
 import CustomAxios from "../lib/actions/CustomAxios";
 import { IUserForm } from "../lib/types/User";
 import { CurrentUserContext } from "../lib/contexts/CurrentUserContext";
+import logo from "./images/logo.png";
 import Image1 from '/Logindecor1.png'
 import Image2 from '/Logindecor2.png'
 import Image3 from '/Logindecor3.png'
@@ -51,7 +52,12 @@ const LoginPage = () => {
         onSubmit={onSubmit}
         className="bg-[#4679a8] mt-12 mb-4 mx-auto flex h-fit w-full max-w-[500px] flex-col items-center gap-3 rounded-lg py-8 shadow-lg md:px-8"
       >
-        <h1 className="text-white text-center text-3xl mb-2 ">TaskLink</h1>
+        <img
+          src={logo}
+          alt="TaskLink Logo"
+          className="mx-auto mb-1"
+          style={{ marginTop: "-15px", width: "200px", height: "auto" }}
+        />
         <InputText
           value={formData.email as string}
           onChange={onChange}
